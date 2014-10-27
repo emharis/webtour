@@ -19,7 +19,41 @@ class KategoriController extends \BaseController {
 
 	public function getIndex()
 	{
-		return \View::make('admin.blogs.kategori.index');
+		return \View::make('admin.blogs.kategori.index',array(
+                    'kats'=>  \App\Models\Kategori::all()
+                ));
 	}
+        
+        public function getNew(){
+            return \View::make('admin.blogs.kategori.new');
+        }
+        
+        public function postNew(){
+            $kat = new \App\Models\Kategori();
+            $kat->nama = \Input::get('nama');
+            $kat->publish = \Input::get('publish');
+            $kat->save();
+            return $kat->toJson();
+        }
+        
+        public function getEdit($id){
+            return \View::make('admin.blogs.kategori.edit',array(
+                    'kat'=>  \App\Models\Kategori::find($id)
+                ));
+        }
+        
+        public function postEdit(){
+            $kat = \App\Models\Kategori::find(\Input::get('katId'));
+            $kat->nama = \Input::get('nama');
+            $kat->publish = \Input::get('publish');
+            $kat->save();
+            return $kat->toJson();
+        }
+        
+        public function getDelete($id){
+            $kat = \App\Models\Kategori::find($id);
+            $kat->delete();
+            return $kat->toJson();
+        }
 
 }

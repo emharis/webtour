@@ -2,7 +2,7 @@
 div.dataTables_length label {
 	float: left;
 	text-align: left;
-        margin-left: 30px;
+        //margin-left: 30px;
 }
 
 div.dataTables_length select {
@@ -15,7 +15,7 @@ div.dataTables_filter label {
 
 div.dataTables_info {
 	padding-top: 8px;
-        margin-left:30px;
+        //margin-left:30px;
 }
 
 div.dataTables_paginate {
@@ -200,4 +200,23 @@ div.DTFC_LeftFootWrapper table {
  */
 div.dataTables_paginate {
         margin-right: 29px;
+}
+
+.paginate_button{
+    border:solid darkgray thin;
+    border-radius: 5px;
+    padding: 5px 10px 5px 10px;
+    margin-right: 1px;
+    margin-left: 1px;
+    background: whitesmoke;
+    color: gray;
+}
+.paginate_active{
+    border:solid #00BA8B thin;
+    border-radius: 5px;
+    padding: 5px 10px 5px 10px;
+    margin-right: 1px;
+    margin-left: 1px;
+    background: #00BA8B;
+    color: white;
 }

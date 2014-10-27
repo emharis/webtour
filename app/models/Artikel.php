@@ -2,13 +2,13 @@
 
 namespace App\Models;
 
-class Kategori extends \Eloquent {
+class Artikel extends \Eloquent {
 	
 	/**
 	 * The database table used by the model.
 	 *
 	 * @var string
 	 */
-	protected $table = 'kategori';
+	protected $table = 'artikel';
 
 }

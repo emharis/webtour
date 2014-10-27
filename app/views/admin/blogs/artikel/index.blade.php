@@ -6,12 +6,12 @@
                 <div class="widget">
                     <div class="widget-header">
                         <i class="icon-table"></i>
-                        <h3>Kategori</h3>
+                        <h3>Artikel</h3>
                     </div>
                     <!-- /widget-header -->
                     <div class="widget-content">
                         <?php $rownum = 1; ?>
-                        <a class="btn btn-primary pull-right ajax-link" href="{{URL::to('admin/kategori/new')}}">New</a>
+                        <a class="btn btn-primary pull-right ajax-link" href="{{URL::to('admin/artikel/new')}}">New</a>
                         <div class="clearfix"></div>
                         <table class="table table-bordered tabledata datatable">
                             <thead>
@@ -35,9 +35,9 @@
                                         @endif
                                     </td>
                                     <td style="font-size: 1.3em;">
-                                        <a class="ajax-link" href="{{URL::to('admin/kategori/edit/'.$kat->id)}}" ><i class="icon-edit"></i></a>
+                                        <a class="ajax-link" href="{{URL::to('admin/artikel/edit/'.$kat->id)}}" ><i class="icon-edit"></i></a>
                                         &nbsp;
-                                        <a class="ajax-link delete-link" href="{{URL::to('admin/kategori/delete/'.$kat->id)}}" ><i class="icon-trash"></i></a>
+                                        <a class="ajax-link delete-link" href="{{URL::to('admin/artikel/delete/'.$kat->id)}}" ><i class="icon-trash"></i></a>
                                     </td>
                                 </tr>
                                 @endforeach

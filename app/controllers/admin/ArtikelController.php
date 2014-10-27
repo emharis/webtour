@@ -19,7 +19,45 @@ class ArtikelController extends \BaseController {
 
 	public function getIndex()
 	{
-		return \View::make('admin.artikel.index');
+		return \View::make('admin.blogs.artikel.index',array(
+                    'kats'=>  \App\Models\Artikel::all()
+                ));
 	}
+        
+        public function getNew(){
+            $kategoris = \App\Models\Kategori::all();
+            foreach($kategoris as $kat){
+                $kats[$kat->id] = $kat->nama;
+            }
+            return \View::make('admin.blogs.artikel.new',array('kats'=>$kats));
+        }
+        
+        public function postNew(){
+            $kat = new \App\Models\Artikel();
+            $kat->nama = \Input::get('nama');
+            $kat->publish = \Input::get('publish');
+            $kat->save();
+            return $kat->toJson();
+        }
+        
+        public function getEdit($id){
+            return \View::make('admin.blogs.artikel.edit',array(
+                    'kat'=>  \App\Models\Artikel::find($id)
+                ));
+        }
+        
+        public function postEdit(){
+            $kat = \App\Models\Artikel::find(\Input::get('katId'));
+            $kat->nama = \Input::get('nama');
+            $kat->publish = \Input::get('publish');
+            $kat->save();
+            return $kat->toJson();
+        }
+        
+        public function getDelete($id){
+            $kat = \App\Models\Artikel::find($id);
+            $kat->delete();
+            return $kat->toJson();
+        }
 
 }

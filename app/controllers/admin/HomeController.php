@@ -21,6 +21,11 @@ class HomeController extends \BaseController {
 	{
 		return \View::make('admin.home');
 	}
+        
+        public function getDashboard()
+	{
+		return \View::make('admin.dashboard');
+	}
 	
 	public function getLogin(){
 		return \View::make('admin.login');	
