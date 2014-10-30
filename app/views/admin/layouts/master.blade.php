@@ -58,10 +58,10 @@
                             <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-file"></i> <span>Blogs</span> <b class="caret"></b> </a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a href="{{URL::to('admin/kategori')}}">Kategori</a>
+                                    <a href="{{URL::to('admin/kategori')}}">Kategori Manager</a>
                                 </li>
                                 <li>
-                                    <a href="{{URL::to('admin/artikel')}}">Artikel</a>
+                                    <a href="{{URL::to('admin/artikel')}}">Artikel Manager</a>
                                 </li>
                             </ul>
                         </li>
@@ -107,6 +107,7 @@
             <!-- /subnavbar-inner -->
         </div>
         <!-- /subnavbar -->
+        <div id="loader" ></div>
         <div class="main">
             @yield('main_content')
             <!-- /main-inner -->
@@ -130,7 +131,7 @@
         <script type="text/javascript">
             
                 function getLoader(){
-                  return '<div style="text-align:center;" ><img src="{{URL::to('admin-assets/img/loaders/loader-keren.gif')}}"/></div>';
+                  return '<div style="text-align:center;" ><img src="{{URL::to('admin-assets/img/loaders/loading36.gif')}}"/></div>';
                 };
                 
                 $(document).ready(function(){

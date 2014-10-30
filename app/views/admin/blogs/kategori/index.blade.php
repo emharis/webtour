@@ -6,7 +6,7 @@
                 <div class="widget">
                     <div class="widget-header">
                         <i class="icon-table"></i>
-                        <h3>Kategori</h3>
+                        <h3>Kategori Manager</h3>
                     </div>
                     <!-- /widget-header -->
                     <div class="widget-content">

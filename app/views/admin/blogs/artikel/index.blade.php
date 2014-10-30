@@ -6,7 +6,7 @@
                 <div class="widget">
                     <div class="widget-header">
                         <i class="icon-table"></i>
-                        <h3>Artikel</h3>
+                        <h3>Artikel Manager</h3>
                     </div>
                     <!-- /widget-header -->
                     <div class="widget-content">
@@ -17,27 +17,29 @@
                             <thead>
                                 <tr>
                                     <th class="span1">No</th>
-                                    <th>Nama</th>
+                                    <th>Judul</th>
+                                    <th>Kategori</th>
                                     <th class="span1">Published</th>
                                     <th class="span1"></th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($kats as $kat)
+                                @foreach($arts as $art)
                                 <tr>
                                     <td></td>
-                                    <td>{{$kat->nama}}</td>
+                                    <td>{{$art->judul}}</td>
+                                    <td>{{$art->kategori->nama}}</td>
                                     <td>
-                                        @if($kat->publish == 'Y')
+                                        @if($art->publish == 'Y')
                                         <i class="icon-ok"></i>
                                         @else
                                         <i class="icon-remove"></i>
                                         @endif
                                     </td>
                                     <td style="font-size: 1.3em;">
-                                        <a class="ajax-link" href="{{URL::to('admin/artikel/edit/'.$kat->id)}}" ><i class="icon-edit"></i></a>
+                                        <a class="ajax-link" href="{{URL::to('admin/artikel/edit/'.$art->id)}}" ><i class="icon-edit"></i></a>
                                         &nbsp;
-                                        <a class="ajax-link delete-link" href="{{URL::to('admin/artikel/delete/'.$kat->id)}}" ><i class="icon-trash"></i></a>
+                                        <a class="ajax-link delete-link" href="{{URL::to('admin/artikel/delete/'.$art->id)}}" ><i class="icon-trash"></i></a>
                                     </td>
                                 </tr>
                                 @endforeach

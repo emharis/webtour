@@ -10,5 +10,9 @@ class Artikel extends \Eloquent {
 	 * @var string
 	 */
 	protected $table = 'artikel';
+        
+        public function kategori(){
+            return $this->belongsTo('App\Models\Kategori');
+        }
 
 }

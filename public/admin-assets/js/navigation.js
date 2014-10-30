@@ -45,7 +45,21 @@
     function loadAjaxContent(contentUrl) {
         //alert(contentUrl);
         if (contentUrl != '') {
-            $('.main').html(getLoader()).load(contentUrl);
+            $('.main').fadeOut(150);
+            $('#loader').html(getLoader());
+            $('.main').load(contentUrl,null,function(){
+                $('.main').fadeIn(100);
+                $('#loader').html('');
+            });
+
+////            $('.main').fadeOut(150);
+////            $('#loader').html(getLoader());
+//            $.get(contentUrl,null,function(data){
+//               $('.main') .html(data);
+////               $('.main').fadeIn(100);
+////               $('#loader').html('');
+//            });
+            
             window.location.hash = contentUrl;
         }
 

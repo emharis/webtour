@@ -10,5 +10,9 @@ class Kategori extends \Eloquent {
 	 * @var string
 	 */
 	protected $table = 'kategori';
+        
+        public function artikels(){
+            return $this->hasMany('App\Models\Artikel');
+        }
 
 }
